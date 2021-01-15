@@ -34,7 +34,10 @@ from utils.loss import compute_loss
 from utils.plots import plot_images, plot_labels, plot_results, plot_evolution
 from utils.torch_utils import ModelEMA, select_device, intersect_dicts, torch_distributed_zero_first
 
+from torch.autograd import Function
 import tflite_quantize_OAQ as tflite
+from overflow_utils import *
+
 
 logger = logging.getLogger(__name__)
 
@@ -43,6 +46,18 @@ try:
 except ImportError:
     wandb = None
     logger.info("Install Weights & Biases for experiment logging via 'pip install wandb' (recommended)")
+
+
+# xiezheng add
+# hook setting
+def register_hook(model, func):
+    for name, layer in model.named_modules():
+        if isinstance(layer, tflite.Conv2d_quantization):
+            layer.register_forward_hook(func)
+
+oaq_conv_result = []
+def hook_conv_results(module, input, output):
+    oaq_conv_result.append(output)
 
 
 def train(hyp, opt, device, tb_writer=None, wandb=None):
@@ -111,7 +126,6 @@ def train(hyp, opt, device, tb_writer=None, wandb=None):
         model = tflite.replace(model=model, quantization_bits=opt.quantization_bits,
                                scale_bits=opt.scale_bits, bias_bits=opt.bias_bits, layer_layer_count=layer_layer_count)
         model = model.to(device)
-
 
 
     # Freeze
@@ -204,6 +218,12 @@ def train(hyp, opt, device, tb_writer=None, wandb=None):
     # DDP mode
     if cuda and rank != -1:
         model = DDP(model, device_ids=[opt.local_rank], output_device=opt.local_rank)
+
+    # xiezheng add
+    # Set hook to store Conv results for No
+    register_hook(model, hook_conv_results)
+    logger.info("len(oaq_conv_result)={},\noaq_conv_result={}".format(len(oaq_conv_result), oaq_conv_result))
+
 
     # Trainloader
     dataloader, dataset = create_dataloader(train_path, imgsz, batch_size, gs, opt,
@@ -345,6 +365,22 @@ def train(hyp, opt, device, tb_writer=None, wandb=None):
                     #     tb_writer.add_graph(model, imgs)  # add model to tensorboard
                 elif plots and ni == 3 and wandb:
                     wandb.log({"Mosaics": [wandb.Image(str(x), caption=x.name) for x in save_dir.glob('train*.jpg')]})
+
+
+            # xiezheng add
+            # calculating No and updating alpha are executed every M=50 steps
+            if ni > nw and (ni - nw) % opt.OAQ_m == 0:
+                # calculate No and updata alpha
+                logger.info("ni={}, calculate No and updata alpha!".format(ni))
+                No = calculate_No(model, oaq_conv_result, opt.conv_accumulator_bits, logger)
+                lr_max = hyp['lr0']
+                lr_curr = [x['lr'] for x in optimizer.param_groups]
+                iteration_batch_size = imgs.size(0)
+                update_alpha(model, No, iteration_batch_size, lr_max, lr_curr, logger)
+
+            # xiezheng add
+            # clear hook results
+            oaq_conv_result.clear()
 
             # end batch ------------------------------------------------------------------------------------------------
         # end epoch ----------------------------------------------------------------------------------------------------
@@ -489,8 +525,13 @@ if __name__ == '__main__':
     # quantization
     parser.add_argument("--quantization", action='store_true', help='whether to do training aware quantization')
     parser.add_argument('--quantization_bits', type=int, default=8)
-    parser.add_argument('--scale_bits', type=int, default=32)
-    parser.add_argument('--bias_bits', type=int, default=32)
+    parser.add_argument('--scale_bits', type=int, default=10, help='8-13')
+    parser.add_argument('--bias_bits', type=int, default=16, help='bias_bits = conv_accumulator_bits')
+
+    # xiezheng add
+    # overflow aware quantization
+    parser.add_argument('--OAQ_m', type=int, default=50)
+    parser.add_argument('--conv_accumulator_bits', type=int, default=16)
 
     opt = parser.parse_args()
 
