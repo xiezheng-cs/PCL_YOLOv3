@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c5c86d5c-2f74-4665-a11a-a08fb8cb51a4" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/tflite_quantize_OAQ.py" afterPath="$PROJECT_DIR$/tflite_quantize_OAQ.py" />
-      <change beforePath="$PROJECT_DIR$/train_quantized_OAQ.py" afterPath="$PROJECT_DIR$/train_quantized_OAQ.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -31,8 +30,8 @@
       <file leaf-file-name="tflite_quantize_OAQ.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tflite_quantize_OAQ.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="142" column="28" lean-forward="true" selection-start-line="142" selection-start-column="28" selection-end-line="142" selection-end-column="28" />
+            <state relative-caret-position="481">
+              <caret line="264" column="26" lean-forward="true" selection-start-line="264" selection-start-column="26" selection-end-line="264" selection-end-column="26" />
               <folding>
                 <element signature="e#0#12#0" expanded="true" />
                 <element signature="e#2789#2939#0" expanded="false" />
@@ -42,6 +41,7 @@
                 <element signature="e#6219#6325#0" expanded="false" />
                 <element signature="e#6373#6478#0" expanded="false" />
                 <element signature="e#8317#8587#0" expanded="false" />
+                <element signature="e#8705#9793#0" expanded="false" />
                 <element signature="e#9825#9961#0" expanded="false" />
                 <element signature="e#9995#10133#0" expanded="false" />
               </folding>
@@ -52,7 +52,7 @@
       <file leaf-file-name="train_quantized_OAQ.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/train_quantized_OAQ.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5012">
+            <state relative-caret-position="4940">
               <caret line="347" column="32" lean-forward="true" selection-start-line="347" selection-start-column="32" selection-end-line="347" selection-end-column="32" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
@@ -117,8 +117,8 @@
         <option value="$PROJECT_DIR$/data/coco.yaml" />
         <option value="$PROJECT_DIR$/run.sh" />
         <option value="$PROJECT_DIR$/train_quantized.py" />
-        <option value="$PROJECT_DIR$/tflite_quantize_OAQ.py" />
         <option value="$PROJECT_DIR$/train_quantized_OAQ.py" />
+        <option value="$PROJECT_DIR$/tflite_quantize_OAQ.py" />
       </list>
     </option>
   </component>
@@ -289,7 +289,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="2" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -315,6 +315,7 @@
             <element signature="e#6219#6325#0" expanded="false" />
             <element signature="e#6373#6478#0" expanded="false" />
             <element signature="e#8317#8587#0" expanded="false" />
+            <element signature="e#8705#9793#0" expanded="false" />
             <element signature="e#9825#9961#0" expanded="false" />
             <element signature="e#9995#10133#0" expanded="false" />
           </folding>
@@ -490,7 +491,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/train_quantized_OAQ.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5012">
+        <state relative-caret-position="4940">
           <caret line="347" column="32" lean-forward="true" selection-start-line="347" selection-start-column="32" selection-end-line="347" selection-end-column="32" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
@@ -511,8 +512,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tflite_quantize_OAQ.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="142" column="28" lean-forward="true" selection-start-line="142" selection-start-column="28" selection-end-line="142" selection-end-column="28" />
+        <state relative-caret-position="481">
+          <caret line="264" column="26" lean-forward="true" selection-start-line="264" selection-start-column="26" selection-end-line="264" selection-end-column="26" />
           <folding>
             <element signature="e#0#12#0" expanded="true" />
             <element signature="e#2789#2939#0" expanded="false" />
@@ -522,6 +523,7 @@
             <element signature="e#6219#6325#0" expanded="false" />
             <element signature="e#6373#6478#0" expanded="false" />
             <element signature="e#8317#8587#0" expanded="false" />
+            <element signature="e#8705#9793#0" expanded="false" />
             <element signature="e#9825#9961#0" expanded="false" />
             <element signature="e#9995#10133#0" expanded="false" />
           </folding>
