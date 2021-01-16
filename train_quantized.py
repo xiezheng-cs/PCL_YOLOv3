@@ -34,7 +34,7 @@ from utils.loss import compute_loss
 from utils.plots import plot_images, plot_labels, plot_results, plot_evolution
 from utils.torch_utils import ModelEMA, select_device, intersect_dicts, torch_distributed_zero_first
 
-import tflite_quantize_OAQ as tflite
+import tflite_quantization as tflite
 
 logger = logging.getLogger(__name__)
 
