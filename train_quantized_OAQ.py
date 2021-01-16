@@ -222,7 +222,7 @@ def train(hyp, opt, device, tb_writer=None, wandb=None):
     # xiezheng add
     # Set hook to store Conv results for No
     register_hook(model, hook_conv_results)
-    # logger.info("len(oaq_conv_result)={},\noaq_conv_result={}".format(len(oaq_conv_result), oaq_conv_result))
+    logger.info("len(oaq_conv_result)={},\noaq_conv_result={}".format(len(oaq_conv_result), oaq_conv_result))
 
 
     # Trainloader

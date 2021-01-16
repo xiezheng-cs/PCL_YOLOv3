@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c5c86d5c-2f74-4665-a11a-a08fb8cb51a4" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/train_quantized.py" afterPath="$PROJECT_DIR$/train_quantized.py" />
+      <change beforePath="$PROJECT_DIR$/tflite_quantize_OAQ.py" afterPath="$PROJECT_DIR$/tflite_quantize_OAQ.py" />
+      <change beforePath="$PROJECT_DIR$/train_quantized_OAQ.py" afterPath="$PROJECT_DIR$/train_quantized_OAQ.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -12,6 +13,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/PCL_YOLOv3$tflite_quantization.coverage" NAME="tflite_quantization Coverage Results" MODIFIED="1610763544002" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/PCL_YOLOv3$demo.coverage" NAME="demo Coverage Results" MODIFIED="1610679774521" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FileEditorManager">
@@ -19,52 +21,29 @@
       <file leaf-file-name="run.sh" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/run.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="492">
-              <caret line="48" column="0" lean-forward="true" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+            <state relative-caret-position="650">
+              <caret line="53" column="0" lean-forward="true" selection-start-line="52" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="train_quantized.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/train_quantized.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="36" column="36" lean-forward="true" selection-start-line="36" selection-start-column="36" selection-end-line="36" selection-end-column="36" />
-              <folding>
-                <element signature="e#0#15#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tflite_quantize_OAQ.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="tflite_quantize_OAQ.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tflite_quantize_OAQ.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1337">
-              <caret line="188" column="53" lean-forward="true" selection-start-line="188" selection-start-column="53" selection-end-line="188" selection-end-column="53" />
+            <state relative-caret-position="184">
+              <caret line="142" column="28" lean-forward="true" selection-start-line="142" selection-start-column="28" selection-end-line="142" selection-end-column="28" />
               <folding>
                 <element signature="e#0#12#0" expanded="true" />
                 <element signature="e#2789#2939#0" expanded="false" />
                 <element signature="e#3009#3328#0" expanded="false" />
                 <element signature="e#3392#3442#0" expanded="false" />
                 <element signature="e#3500#3850#0" expanded="false" />
-                <element signature="e#8237#8507#0" expanded="false" />
-                <element signature="e#8625#9713#0" expanded="false" />
-                <element signature="e#9745#9881#0" expanded="false" />
-                <element signature="e#9915#10053#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="overflow_utils.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/overflow_utils.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="99">
-              <caret line="39" column="13" lean-forward="true" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="13" />
-              <folding>
-                <element signature="e#0#12#0" expanded="true" />
+                <element signature="e#6219#6325#0" expanded="false" />
+                <element signature="e#6373#6478#0" expanded="false" />
+                <element signature="e#8317#8587#0" expanded="false" />
+                <element signature="e#9825#9961#0" expanded="false" />
+                <element signature="e#9995#10133#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -73,8 +52,8 @@
       <file leaf-file-name="train_quantized_OAQ.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/train_quantized_OAQ.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2051">
-              <caret line="215" column="18" lean-forward="false" selection-start-line="215" selection-start-column="10" selection-end-line="215" selection-end-column="18" />
+            <state relative-caret-position="5012">
+              <caret line="347" column="32" lean-forward="true" selection-start-line="347" selection-start-column="32" selection-end-line="347" selection-end-column="32" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
                 <element signature="e#3276#4101#0" expanded="false" />
@@ -83,11 +62,11 @@
                 <element signature="e#5437#5746#0" expanded="false" />
                 <element signature="e#6707#7049#0" expanded="false" />
                 <element signature="e#7177#8015#0" expanded="false" />
-                <element signature="e#9604#10604#0" expanded="false" />
-                <element signature="e#12055#12707#0" expanded="false" />
-                <element signature="e#17685#20547#0" expanded="false" />
-                <element signature="e#20721#22396#0" expanded="false" />
-                <element signature="e#28594#33489#0" expanded="false" />
+                <element signature="e#9602#10602#0" expanded="false" />
+                <element signature="e#12053#12705#0" expanded="false" />
+                <element signature="e#17683#20545#0" expanded="false" />
+                <element signature="e#20719#22394#0" expanded="false" />
+                <element signature="e#28592#33487#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -96,8 +75,8 @@
       <file leaf-file-name="torch_utils.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/utils/torch_utils.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="467">
-              <caret line="286" column="32" lean-forward="false" selection-start-line="286" selection-start-column="29" selection-end-line="286" selection-end-column="32" />
+            <state relative-caret-position="362">
+              <caret line="279" column="8" lean-forward="false" selection-start-line="279" selection-start-column="8" selection-end-line="279" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -121,9 +100,9 @@
       <find>lr</find>
       <find>len(oaq_conv_result)</find>
       <find># sync</find>
-      <find>ema</find>
       <find>amp</find>
       <find>ModelEMA</find>
+      <find>ema</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -136,10 +115,10 @@
         <option value="$PROJECT_DIR$/utils/overflow_utils.py" />
         <option value="$PROJECT_DIR$/overflow_utils.py" />
         <option value="$PROJECT_DIR$/data/coco.yaml" />
-        <option value="$PROJECT_DIR$/tflite_quantize_OAQ.py" />
-        <option value="$PROJECT_DIR$/train_quantized_OAQ.py" />
         <option value="$PROJECT_DIR$/run.sh" />
         <option value="$PROJECT_DIR$/train_quantized.py" />
+        <option value="$PROJECT_DIR$/tflite_quantize_OAQ.py" />
+        <option value="$PROJECT_DIR$/train_quantized_OAQ.py" />
       </list>
     </option>
   </component>
@@ -209,7 +188,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.tflite_quantization">
     <configuration name="demo" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -229,9 +208,33 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
+    <configuration name="tflite_quantization" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="PCL_YOLOv3" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tflite_quantization.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <list size="2">
+      <item index="0" class="java.lang.String" itemvalue="Python.demo" />
+      <item index="1" class="java.lang.String" itemvalue="Python.tflite_quantization" />
+    </list>
     <recent_temporary>
-      <list size="1">
-        <item index="0" class="java.lang.String" itemvalue="Python.demo" />
+      <list size="2">
+        <item index="0" class="java.lang.String" itemvalue="Python.tflite_quantization" />
+        <item index="1" class="java.lang.String" itemvalue="Python.demo" />
       </list>
     </recent_temporary>
   </component>
@@ -257,8 +260,8 @@
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.044692736" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1631285" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.044692736" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0022346368" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -309,10 +312,11 @@
             <element signature="e#3009#3328#0" expanded="false" />
             <element signature="e#3392#3442#0" expanded="false" />
             <element signature="e#3500#3850#0" expanded="false" />
-            <element signature="e#8237#8507#0" expanded="false" />
-            <element signature="e#8625#9713#0" expanded="false" />
-            <element signature="e#9745#9881#0" expanded="false" />
-            <element signature="e#9915#10053#0" expanded="false" />
+            <element signature="e#6219#6325#0" expanded="false" />
+            <element signature="e#6373#6478#0" expanded="false" />
+            <element signature="e#8317#8587#0" expanded="false" />
+            <element signature="e#9825#9961#0" expanded="false" />
+            <element signature="e#9995#10133#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -339,11 +343,11 @@
             <element signature="e#5437#5746#0" expanded="false" />
             <element signature="e#6707#7049#0" expanded="false" />
             <element signature="e#7177#8015#0" expanded="false" />
-            <element signature="e#9604#10604#0" expanded="false" />
-            <element signature="e#12055#12707#0" expanded="false" />
-            <element signature="e#17685#20547#0" expanded="false" />
-            <element signature="e#20721#22396#0" expanded="false" />
-            <element signature="e#28594#33489#0" expanded="false" />
+            <element signature="e#9602#10602#0" expanded="false" />
+            <element signature="e#12053#12705#0" expanded="false" />
+            <element signature="e#17683#20545#0" expanded="false" />
+            <element signature="e#20719#22394#0" expanded="false" />
+            <element signature="e#28592#33487#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -422,38 +426,72 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/overflow_utils.py">
+    <entry file="file://$PROJECT_DIR$/tflite_quantization.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="99">
-          <caret line="39" column="13" lean-forward="true" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="13" />
+        <state relative-caret-position="456">
+          <caret line="94" column="0" lean-forward="true" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
           <folding>
-            <element signature="e#0#12#0" expanded="true" />
+            <element signature="e#0#12#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tflite_quantize_OAQ.py">
+    <entry file="file://$PROJECT_DIR$/train_quantized.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1337">
-          <caret line="188" column="53" lean-forward="true" selection-start-line="188" selection-start-column="53" selection-end-line="188" selection-end-column="53" />
+        <state relative-caret-position="384">
+          <caret line="34" column="49" lean-forward="false" selection-start-line="34" selection-start-column="49" selection-end-line="34" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/overflow_utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="936">
+          <caret line="39" column="13" lean-forward="true" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="13" />
           <folding>
-            <element signature="e#0#12#0" expanded="true" />
-            <element signature="e#2789#2939#0" expanded="false" />
-            <element signature="e#3009#3328#0" expanded="false" />
-            <element signature="e#3392#3442#0" expanded="false" />
-            <element signature="e#3500#3850#0" expanded="false" />
-            <element signature="e#8237#8507#0" expanded="false" />
-            <element signature="e#8625#9713#0" expanded="false" />
-            <element signature="e#9745#9881#0" expanded="false" />
-            <element signature="e#9915#10053#0" expanded="false" />
+            <element signature="e#0#12#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/ProgramData/Anaconda3/Lib/site-packages/torch/_C/_VariableFunctions.pyi">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="1212" column="4" lean-forward="false" selection-start-line="1212" selection-start-column="4" selection-end-line="1212" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/run.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="650">
+          <caret line="53" column="0" lean-forward="true" selection-start-line="52" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/train.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="177" column="9" lean-forward="false" selection-start-line="177" selection-start-column="6" selection-end-line="177" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/torch_utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="362">
+          <caret line="279" column="8" lean-forward="false" selection-start-line="279" selection-start-column="8" selection-end-line="279" selection-end-column="8" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/train_quantized_OAQ.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2051">
-          <caret line="215" column="18" lean-forward="false" selection-start-line="215" selection-start-column="10" selection-end-line="215" selection-end-column="18" />
+        <state relative-caret-position="5012">
+          <caret line="347" column="32" lean-forward="true" selection-start-line="347" selection-start-column="32" selection-end-line="347" selection-end-column="32" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
             <element signature="e#3276#4101#0" expanded="false" />
@@ -462,37 +500,30 @@
             <element signature="e#5437#5746#0" expanded="false" />
             <element signature="e#6707#7049#0" expanded="false" />
             <element signature="e#7177#8015#0" expanded="false" />
-            <element signature="e#9604#10604#0" expanded="false" />
-            <element signature="e#12055#12707#0" expanded="false" />
-            <element signature="e#17685#20547#0" expanded="false" />
-            <element signature="e#20721#22396#0" expanded="false" />
-            <element signature="e#28594#33489#0" expanded="false" />
+            <element signature="e#9602#10602#0" expanded="false" />
+            <element signature="e#12053#12705#0" expanded="false" />
+            <element signature="e#17683#20545#0" expanded="false" />
+            <element signature="e#20719#22394#0" expanded="false" />
+            <element signature="e#28592#33487#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/utils/torch_utils.py">
+    <entry file="file://$PROJECT_DIR$/tflite_quantize_OAQ.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="467">
-          <caret line="286" column="32" lean-forward="false" selection-start-line="286" selection-start-column="29" selection-end-line="286" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/run.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="492">
-          <caret line="48" column="0" lean-forward="true" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/train_quantized.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="36" column="36" lean-forward="true" selection-start-line="36" selection-start-column="36" selection-end-line="36" selection-end-column="36" />
+        <state relative-caret-position="184">
+          <caret line="142" column="28" lean-forward="true" selection-start-line="142" selection-start-column="28" selection-end-line="142" selection-end-column="28" />
           <folding>
-            <element signature="e#0#15#0" expanded="true" />
+            <element signature="e#0#12#0" expanded="true" />
+            <element signature="e#2789#2939#0" expanded="false" />
+            <element signature="e#3009#3328#0" expanded="false" />
+            <element signature="e#3392#3442#0" expanded="false" />
+            <element signature="e#3500#3850#0" expanded="false" />
+            <element signature="e#6219#6325#0" expanded="false" />
+            <element signature="e#6373#6478#0" expanded="false" />
+            <element signature="e#8317#8587#0" expanded="false" />
+            <element signature="e#9825#9961#0" expanded="false" />
+            <element signature="e#9995#10133#0" expanded="false" />
           </folding>
         </state>
       </provider>
