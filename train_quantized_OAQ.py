@@ -222,7 +222,7 @@ def train(hyp, opt, device, tb_writer=None, wandb=None):
     # xiezheng add
     # Set hook to store Conv results for No
     register_hook(model, hook_conv_results)
-    logger.info("len(oaq_conv_result)={},\noaq_conv_result={}".format(len(oaq_conv_result), oaq_conv_result))
+    # logger.info("len(oaq_conv_result)={},\noaq_conv_result={}".format(len(oaq_conv_result), oaq_conv_result))
 
 
     # Trainloader
@@ -270,7 +270,7 @@ def train(hyp, opt, device, tb_writer=None, wandb=None):
     maps = np.zeros(nc)  # mAP per class
     results = (0, 0, 0, 0, 0, 0, 0)  # P, R, mAP@.5, mAP@.5-.95, val_loss(box, obj, cls)
     scheduler.last_epoch = start_epoch - 1  # do not move
-    scaler = amp.GradScaler(enabled=cuda)
+    # scaler = amp.GradScaler(enabled=cuda)
     logger.info('Image sizes %g train, %g test\n'
                 'Using %g dataloader workers\nLogging results to %s\n'
                 'Starting training for %g epochs...' % (imgsz, imgsz_test, dataloader.num_workers, save_dir, epochs))
@@ -331,19 +331,21 @@ def train(hyp, opt, device, tb_writer=None, wandb=None):
                     imgs = F.interpolate(imgs, size=ns, mode='bilinear', align_corners=False)
 
             # Forward
-            with amp.autocast(enabled=cuda):
-                pred = model(imgs)  # forward
-                loss, loss_items = compute_loss(pred, targets.to(device), model)  # loss scaled by batch_size
-                if rank != -1:
-                    loss *= opt.world_size  # gradient averaged between devices in DDP mode
+            # with amp.autocast(enabled=cuda):
+            pred = model(imgs)  # forward
+            loss, loss_items = compute_loss(pred, targets.to(device), model)  # loss scaled by batch_size
+            if rank != -1:
+                loss *= opt.world_size  # gradient averaged between devices in DDP mode
 
             # Backward
-            scaler.scale(loss).backward()
+            # scaler.scale(loss).backward()
+            loss.backward()
 
             # Optimize
             if ni % accumulate == 0:
-                scaler.step(optimizer)  # optimizer.step
-                scaler.update()
+                # scaler.step(optimizer)  # optimizer.step
+                # scaler.update()
+                optimizer.step()
                 optimizer.zero_grad()
                 if ema:
                     ema.update(model)
@@ -525,7 +527,7 @@ if __name__ == '__main__':
     # quantization
     parser.add_argument("--quantization", action='store_true', help='whether to do training aware quantization')
     parser.add_argument('--quantization_bits', type=int, default=8)
-    parser.add_argument('--scale_bits', type=int, default=10, help='8-13')
+    parser.add_argument('--scale_bits', type=int, default=8, help='8-13')
     parser.add_argument('--bias_bits', type=int, default=16, help='bias_bits = conv_accumulator_bits')
 
     # xiezheng add

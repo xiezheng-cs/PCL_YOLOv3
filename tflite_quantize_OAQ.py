@@ -31,7 +31,7 @@ def uniform_symmetric_quantizer_per_tensor(x, alpha, bits=8, scale_bits=8, act_m
     return x_dequant, scale_int
 
 # Uniform quantization: per-channel
-def uniform_symmetric_quantizer_per_channel(x, alpha, bits=8, scale_bits=8, scale_int_bias=None):
+def uniform_symmetric_quantizer_per_channel(x, alpha=1, bits=8, scale_bits=8, scale_int_bias=None):
     # per_channel, signed=True
     # calculate scale
     if scale_int_bias is not None:

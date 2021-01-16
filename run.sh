@@ -46,3 +46,11 @@ python -m tool.launch --gpus 0,1 train_quantized.py --data coco.yaml --cfg yolov
 
 # 全精度 双卡 300epoch
 python -m tool.launch --gpus 0,1 train_quantized.py --data coco.yaml --cfg yolov3-tiny.yaml --weights '' --sync-bn --batch-size 64 --epochs 300
+
+
+# overflow aware quantization
+# 8bit 单卡
+CUDA_VISIBLE_DEVICES=6 python train_quantized_OAQ.py --data coco.yaml --cfg yolov3-tiny.yaml --weights 'yolov3-tiny.pt' --batch-size 32 --quantization --quantization_bits 8 --scale_bits 8
+
+# 8bit 分布式
+python -m tool.launch --gpus 5,6 train_quantized_OAQ.py --data coco.yaml --cfg yolov3-tiny.yaml --weights 'yolov3-tiny.pt'  --quantization --sync-bn --batch-size 64 --quantization_bits 8 --scale_bits 8
