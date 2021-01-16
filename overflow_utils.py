@@ -16,7 +16,7 @@ class AllReduce_overflow(Function):
         return torch.sum(inputs, dim=0)
 
 
-def calculate_No(model, oaq_conv_result, conv_accumulator_bits, logger):
+def calculate_No(device, model, oaq_conv_result, conv_accumulator_bits, logger):
     logger.info("calculate No: start!")
     logger.info('len(oaq_conv_result)={}'.format(len(oaq_conv_result)))
 
@@ -25,14 +25,16 @@ def calculate_No(model, oaq_conv_result, conv_accumulator_bits, logger):
     max = 2 ** (conv_accumulator_bits - 1) - 1
 
     index = 0
-    No = []  # nx1, n: the number of conv layer
+    No = torch.zeros(len(oaq_conv_result))  # nx1, n: the number of conv layer
     for name, layer in model.named_modules():
         if isinstance(layer, tflite.Conv2d_quantization):
-            oaq_conv_result[index] = torch.round(
-                oaq_conv_result[index] / (layer.scale_int_input * layer.scale_int_weight))
+            # oaq_conv_result[index]: batch*C_out*h*w
+            # layer.scale_int_weight: [C_out]
+            scale = (layer.scale_int_input * layer.scale_int_weight).unsqueeze(0).unsqueeze(2).unsqueeze(3).expand_as(oaq_conv_result[index])
+            oaq_conv_result[index] = torch.round(oaq_conv_result[index] / scale)
             down_overflow_index = oaq_conv_result[index] < min
             up_overflow_index = oaq_conv_result[index] > max
-            No.append(torch.sum(down_overflow_index) + torch.sum(up_overflow_index))
+            No[index] = (torch.sum(down_overflow_index) + torch.sum(up_overflow_index)).to(device)
             index += 1
 
     if index != len(oaq_conv_result):
@@ -51,6 +53,7 @@ def update_alpha(model, No, iteration_batch_size, lr_max, lr_curr, logger):
     index = 0
     for name, layer in model.named_modules():
         if isinstance(layer, tflite.Conv2d_quantization):
+            logger.info('Before update, layer-{}, activation_alpha={}, weight_alpha={}'.format(index, layer.activation_alpha, layer.weight_alpha))
             if No[index] > 0:
                 update_value = torch.min(lr_curr * torch.log(No[index] / iteration_batch_size), lr_max)
                 layer.activation_alpha += update_value
@@ -63,3 +66,7 @@ def update_alpha(model, No, iteration_batch_size, lr_max, lr_curr, logger):
             else:
                 assert False, logger.info('No[{}] ={} impossible !!!'.format(index, No[index]))
             index += 1
+
+            logger.info(
+                'After update, layer-{}, activation_alpha={}, weight_alpha={}'.format(index, layer.activation_alpha,
+                                                                                       layer.weight_alpha))

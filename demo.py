@@ -66,8 +66,11 @@ from torch import nn
 #     print('input: ', total_feat_in[idx])
 #     print('output: ', total_feat_out[idx])
 
-a = torch.randint(1,10,(2,2))
+# a = torch.randint(1,10,(2,2))
+# print(a)
+# index = a < 5
+# print(index)
+# print(torch.sum(index))
+
+a = torch.ones(1)
 print(a)
-index = a < 5
-print(index)
-print(torch.sum(index))

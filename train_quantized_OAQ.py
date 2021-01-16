@@ -371,14 +371,22 @@ def train(hyp, opt, device, tb_writer=None, wandb=None):
 
             # xiezheng add
             # calculating No and updating alpha are executed every M=50 steps
-            if ni > nw and (ni - nw) % opt.OAQ_m == 0:
-                # calculate No and updata alpha
-                logger.info("ni={}, calculate No and updata alpha!".format(ni))
-                No = calculate_No(model, oaq_conv_result, opt.conv_accumulator_bits, logger)
-                lr_max = hyp['lr0']
-                lr_curr = [x['lr'] for x in optimizer.param_groups]
-                iteration_batch_size = imgs.size(0)
-                update_alpha(model, No, iteration_batch_size, lr_max, lr_curr, logger)
+            # if ni > nw and (ni - nw) % opt.OAQ_m == 0:
+            #     # calculate No and updata alpha
+            #     logger.info("ni={}, calculate No and updata alpha!".format(ni))
+            #     No = calculate_No(model, oaq_conv_result, opt.conv_accumulator_bits, logger)
+            #     lr_max = hyp['lr0']
+            #     lr_curr = [x['lr'] for x in optimizer.param_groups]
+            #     iteration_batch_size = imgs.size(0)
+            #     update_alpha(model, No, iteration_batch_size, lr_max, lr_curr, logger)
+
+            # Test: calculate No and updata alpha
+            logger.info("ni={}, calculate No and updata alpha!".format(ni))
+            No = calculate_No(device, model, oaq_conv_result, opt.conv_accumulator_bits, logger)
+            lr_max = hyp['lr0']
+            lr_curr = [x['lr'] for x in optimizer.param_groups]
+            iteration_batch_size = imgs.size(0)
+            update_alpha(model, No, iteration_batch_size, lr_max, lr_curr, logger)
 
             # xiezheng add
             # clear hook results
