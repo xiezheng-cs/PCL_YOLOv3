@@ -25,7 +25,7 @@ def calculate_No(device, model, oaq_conv_result, conv_accumulator_bits, logger):
     max = 2 ** (conv_accumulator_bits - 1) - 1
 
     index = 0
-    No = torch.zeros(len(oaq_conv_result))  # nx1, n: the number of conv layer
+    No = torch.zeros(len(oaq_conv_result)).to(device)   # nx1, n: the number of conv layer
     for name, layer in model.named_modules():
         if isinstance(layer, tflite.Conv2d_quantization):
             # oaq_conv_result[index]: batch*C_out*h*w
@@ -42,7 +42,7 @@ def calculate_No(device, model, oaq_conv_result, conv_accumulator_bits, logger):
     return No
 
 
-def update_alpha(model, No, iteration_batch_size, lr_max, lr_curr, logger):
+def update_alpha(device, model, No, iteration_batch_size, lr_max, lr_curr, logger):
     logger.info("update alpha: start!")
 
     # merge No from every GPU
@@ -54,19 +54,18 @@ def update_alpha(model, No, iteration_batch_size, lr_max, lr_curr, logger):
     for name, layer in model.named_modules():
         if isinstance(layer, tflite.Conv2d_quantization):
             logger.info('Before update, layer-{}, activation_alpha={}, weight_alpha={}'.format(index, layer.activation_alpha, layer.weight_alpha))
+            logger.info('No[{}]={}, iteration_batch_size={}, lr_max={}, lr_curr={}'.format(index, No[index], iteration_batch_size, lr_max, lr_curr))
             if No[index] > 0:
-                update_value = torch.min(lr_curr * torch.log(No[index] / iteration_batch_size), lr_max)
+                update_value = torch.min((lr_curr * torch.log(No[index] / iteration_batch_size)), torch.Tensor([lr_max])[0].to(device))
                 layer.activation_alpha += update_value
                 layer.weight_alpha += update_value
 
             elif No[index] == 0:
-                layer.activation_alpha -= lr_curr
-                layer.weight_alpha -= lr_curr
+                lr_curr_gpu = torch.Tensor([lr_curr])[0].to(device)
+                layer.activation_alpha -= lr_curr_gpu
+                layer.weight_alpha -= lr_curr_gpu
 
             else:
                 assert False, logger.info('No[{}] ={} impossible !!!'.format(index, No[index]))
             index += 1
-
-            logger.info(
-                'After update, layer-{}, activation_alpha={}, weight_alpha={}'.format(index, layer.activation_alpha,
-                                                                                       layer.weight_alpha))
+            logger.info('After update, layer-{}, activation_alpha={}, weight_alpha={}'.format(index, layer.activation_alpha, layer.weight_alpha))

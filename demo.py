@@ -72,5 +72,10 @@ from torch import nn
 # print(index)
 # print(torch.sum(index))
 
-a = torch.ones(1)
-print(a)
+a = 1.23456
+print(type(a))
+b = torch.FloatTensor([a])
+# b =  torch.from_numpy(a)
+print(type(b))
+print(b, b.size())
+print(b[0])
