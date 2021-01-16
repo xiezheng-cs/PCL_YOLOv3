@@ -379,7 +379,6 @@ def train(hyp, opt, device, tb_writer=None, wandb=None):
                 iteration_batch_size = imgs.size(0)
                 update_alpha(device, model, No, iteration_batch_size, lr_max, lr_curr, logger)
 
-
             # Test: calculate No and updata alpha
             # logger.info("ni={}, calculate No and updata alpha!".format(ni))
             # No = calculate_No(device, model, oaq_conv_result, opt.conv_accumulator_bits, logger)

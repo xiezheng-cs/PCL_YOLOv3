@@ -53,10 +53,14 @@ def update_alpha(device, model, No, iteration_batch_size, lr_max, lr_curr, logge
     index = 0
     for name, layer in model.named_modules():
         if isinstance(layer, tflite.Conv2d_quantization):
-            logger.info('Before update, layer-{}, activation_alpha={}, weight_alpha={}'.format(index, layer.activation_alpha, layer.weight_alpha))
-            logger.info('No[{}]={}, iteration_batch_size={}, lr_max={}, lr_curr={}'.format(index, No[index], iteration_batch_size, lr_max, lr_curr))
+            logger.info('index = {}'.format(index))
+            logger.info('Before update, activation_alpha={}, weight_alpha={}'.format(layer.activation_alpha, layer.weight_alpha))
+            # logger.info('No[{}]={}, iteration_batch_size={}, lr_max={}, lr_curr={}'.format(index, No[index], iteration_batch_size, lr_max, lr_curr))
             if No[index] > 0:
-                update_value = torch.min((lr_curr * torch.log(No[index] / iteration_batch_size)), torch.Tensor([lr_max])[0].to(device))
+                # v1
+                # update_value = torch.min((lr_curr * torch.log(No[index] / iteration_batch_size)), torch.Tensor([lr_max])[0].to(device))
+                # v2
+                update_value = torch.min((lr_curr * torch.log(No[index])), torch.Tensor([lr_max])[0].to(device))
                 layer.activation_alpha += update_value
                 layer.weight_alpha += update_value
 
@@ -68,4 +72,4 @@ def update_alpha(device, model, No, iteration_batch_size, lr_max, lr_curr, logge
             else:
                 assert False, logger.info('No[{}] ={} impossible !!!'.format(index, No[index]))
             index += 1
-            logger.info('After update, layer-{}, activation_alpha={}, weight_alpha={}'.format(index, layer.activation_alpha, layer.weight_alpha))
+            logger.info('After update, activation_alpha={}, weight_alpha={}'.format(layer.activation_alpha, layer.weight_alpha))

@@ -49,10 +49,10 @@ python -m tool.launch --gpus 0,1 train_quantized.py --data coco.yaml --cfg yolov
 
 
 # overflow aware quantization
-# 8bit量化 scale_bits最少需要12, 才不会nan
-
+# 8bit量化：scale_bits最少需要12, 才不会nan
 # 8bit 单卡
-CUDA_VISIBLE_DEVICES=6 python train_quantized_OAQ.py --data coco.yaml --cfg yolov3-tiny.yaml --weights 'yolov3-tiny.pt' --batch-size 32 --quantization --quantization_bits 8 --scale_bits 12
+CUDA_VISIBLE_DEVICES=5 python train_quantized_OAQ.py --data coco.yaml --cfg yolov3-tiny.yaml --weights 'yolov3-tiny.pt' --batch-size 32 --quantization --quantization_bits 8 --scale_bits 12
 
 # 8bit 分布式
 python -m tool.launch --gpus 0,6 train_quantized_OAQ.py --data coco.yaml --cfg yolov3-tiny.yaml --weights 'yolov3-tiny.pt'  --quantization --sync-bn --batch-size 64 --quantization_bits 8 --scale_bits 12
+python -m tool.launch --gpus 5,7 train_quantized_OAQ.py --data coco.yaml --cfg yolov3-tiny.yaml --weights 'yolov3-tiny.pt'  --quantization --sync-bn --batch-size 64 --quantization_bits 8 --scale_bits 12
