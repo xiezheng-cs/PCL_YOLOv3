@@ -57,10 +57,10 @@ def update_alpha(device, model, No, iteration_batch_size, lr_max, lr_curr, logge
             logger.info('Before update, activation_alpha={}, weight_alpha={}'.format(layer.activation_alpha, layer.weight_alpha))
             # logger.info('No[{}]={}, iteration_batch_size={}, lr_max={}, lr_curr={}'.format(index, No[index], iteration_batch_size, lr_max, lr_curr))
             if No[index] > 0:
-                # v1
-                # update_value = torch.min((lr_curr * torch.log(No[index] / iteration_batch_size)), torch.Tensor([lr_max])[0].to(device))
+                # v1: better
+                update_value = torch.min((lr_curr * torch.log(No[index] / iteration_batch_size)), torch.Tensor([lr_max])[0].to(device))
                 # v2
-                update_value = torch.min((lr_curr * torch.log(No[index])), torch.Tensor([lr_max])[0].to(device))
+                # update_value = torch.min((lr_curr * torch.log(No[index])), torch.Tensor([lr_max])[0].to(device))
                 layer.activation_alpha += update_value
                 layer.weight_alpha += update_value
 

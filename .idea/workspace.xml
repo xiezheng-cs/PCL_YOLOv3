@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c5c86d5c-2f74-4665-a11a-a08fb8cb51a4" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/overflow_utils.py" afterPath="$PROJECT_DIR$/overflow_utils.py" />
-      <change beforePath="$PROJECT_DIR$/run.sh" afterPath="$PROJECT_DIR$/run.sh" />
-      <change beforePath="$PROJECT_DIR$/train_quantized_OAQ.py" afterPath="$PROJECT_DIR$/train_quantized_OAQ.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -22,8 +21,8 @@
       <file leaf-file-name="run.sh" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/run.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="609">
-              <caret line="57" column="187" lean-forward="true" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="202" />
+            <state relative-caret-position="394">
+              <caret line="48" column="0" lean-forward="false" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -32,19 +31,18 @@
       <file leaf-file-name="tflite_quantize_OAQ.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tflite_quantize_OAQ.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="24">
-              <caret line="127" column="48" lean-forward="false" selection-start-line="127" selection-start-column="36" selection-end-line="127" selection-end-column="48" />
+            <state relative-caret-position="-353">
+              <caret line="123" column="37" lean-forward="false" selection-start-line="123" selection-start-column="37" selection-end-line="123" selection-end-column="37" />
               <folding>
                 <element signature="e#0#12#0" expanded="true" />
+                <element signature="e#1026#2751#0" expanded="false" />
                 <element signature="e#2789#2939#0" expanded="false" />
                 <element signature="e#3009#3328#0" expanded="false" />
                 <element signature="e#3392#3442#0" expanded="false" />
-                <element signature="e#3500#3850#0" expanded="false" />
                 <element signature="e#3883#4380#0" expanded="false" />
                 <element signature="e#6219#6325#0" expanded="false" />
                 <element signature="e#6373#6478#0" expanded="false" />
                 <element signature="e#8317#8587#0" expanded="false" />
-                <element signature="e#8705#9793#0" expanded="false" />
                 <element signature="e#9825#9961#0" expanded="false" />
                 <element signature="e#9995#10133#0" expanded="false" />
               </folding>
@@ -55,8 +53,8 @@
       <file leaf-file-name="train_quantized_OAQ.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/train_quantized_OAQ.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="377" column="39" lean-forward="false" selection-start-line="377" selection-start-column="39" selection-end-line="377" selection-end-column="39" />
+            <state relative-caret-position="271">
+              <caret line="125" column="30" lean-forward="false" selection-start-line="125" selection-start-column="23" selection-end-line="125" selection-end-column="30" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
                 <element signature="e#3276#4101#0" expanded="false" />
@@ -78,8 +76,8 @@
       <file leaf-file-name="overflow_utils.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/overflow_utils.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="371">
-              <caret line="62" column="47" lean-forward="false" selection-start-line="62" selection-start-column="47" selection-end-line="62" selection-end-column="47" />
+            <state relative-caret-position="351">
+              <caret line="59" column="23" lean-forward="true" selection-start-line="59" selection-start-column="23" selection-end-line="59" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -107,9 +105,10 @@
       <find>AllReduce</find>
       <find>train</find>
       <find>calculate_No</find>
-      <find>replace</find>
       <find>optimizer</find>
       <find>ni</find>
+      <find>first_layer</find>
+      <find>replace</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -125,8 +124,10 @@
         <option value="$PROJECT_DIR$/tflite_quantization.py" />
         <option value="$PROJECT_DIR$/demo.py" />
         <option value="$PROJECT_DIR$/train_quantized_OAQ.py" />
-        <option value="$PROJECT_DIR$/overflow_utils.py" />
         <option value="$PROJECT_DIR$/run.sh" />
+        <option value="$PROJECT_DIR$/t2" />
+        <option value="$PROJECT_DIR$/t1" />
+        <option value="$PROJECT_DIR$/overflow_utils.py" />
       </list>
     </option>
   </component>
@@ -477,27 +478,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tflite_quantize_OAQ.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
-          <caret line="127" column="48" lean-forward="false" selection-start-line="127" selection-start-column="36" selection-end-line="127" selection-end-column="48" />
-          <folding>
-            <element signature="e#0#12#0" expanded="true" />
-            <element signature="e#2789#2939#0" expanded="false" />
-            <element signature="e#3009#3328#0" expanded="false" />
-            <element signature="e#3392#3442#0" expanded="false" />
-            <element signature="e#3500#3850#0" expanded="false" />
-            <element signature="e#3883#4380#0" expanded="false" />
-            <element signature="e#6219#6325#0" expanded="false" />
-            <element signature="e#6373#6478#0" expanded="false" />
-            <element signature="e#8317#8587#0" expanded="false" />
-            <element signature="e#8705#9793#0" expanded="false" />
-            <element signature="e#9825#9961#0" expanded="false" />
-            <element signature="e#9995#10133#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/demo.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
@@ -508,16 +488,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/run.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="609">
-          <caret line="57" column="187" lean-forward="true" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="202" />
+        <state relative-caret-position="394">
+          <caret line="48" column="0" lean-forward="false" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/train_quantized_OAQ.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="377" column="39" lean-forward="false" selection-start-line="377" selection-start-column="39" selection-end-line="377" selection-end-column="39" />
+        <state relative-caret-position="271">
+          <caret line="125" column="30" lean-forward="false" selection-start-line="125" selection-start-column="23" selection-end-line="125" selection-end-column="30" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
             <element signature="e#3276#4101#0" expanded="false" />
@@ -535,10 +515,46 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/tflite_quantize_OAQ.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-353">
+          <caret line="123" column="37" lean-forward="false" selection-start-line="123" selection-start-column="37" selection-end-line="123" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#12#0" expanded="true" />
+            <element signature="e#1026#2751#0" expanded="false" />
+            <element signature="e#2789#2939#0" expanded="false" />
+            <element signature="e#3009#3328#0" expanded="false" />
+            <element signature="e#3392#3442#0" expanded="false" />
+            <element signature="e#3883#4380#0" expanded="false" />
+            <element signature="e#6219#6325#0" expanded="false" />
+            <element signature="e#6373#6478#0" expanded="false" />
+            <element signature="e#8317#8587#0" expanded="false" />
+            <element signature="e#9825#9961#0" expanded="false" />
+            <element signature="e#9995#10133#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/t2">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="8" column="1" lean-forward="false" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/t1">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="4" column="35" lean-forward="false" selection-start-line="4" selection-start-column="35" selection-end-line="4" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/overflow_utils.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="371">
-          <caret line="62" column="47" lean-forward="false" selection-start-line="62" selection-start-column="47" selection-end-line="62" selection-end-column="47" />
+        <state relative-caret-position="351">
+          <caret line="59" column="23" lean-forward="true" selection-start-line="59" selection-start-column="23" selection-end-line="59" selection-end-column="23" />
           <folding />
         </state>
       </provider>
