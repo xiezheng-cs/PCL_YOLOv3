@@ -493,6 +493,11 @@ def train(hyp, opt, device, tb_writer=None, wandb=None):
                                       save_json=True,  # use pycocotools
                                       plots=False)
 
+            # Write
+            with open(results_file, 'a') as f:
+                f.write("Test best.pt:\n")
+                f.write(s + '%10.4g' * 7 % results + '\n')  # P, R, mAP@.5, mAP@.5-.95, val_loss(box, obj, cls)
+
     else:
         dist.destroy_process_group()
 
